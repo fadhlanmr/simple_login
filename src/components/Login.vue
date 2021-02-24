@@ -1,23 +1,15 @@
 <template>
   <div>
     <h4>Login</h4>
-    <form>
-      <label for="email">E-Mail Address</label>
-      <div>
-        <input id="email" type="email" v-model="email" required autofocus>
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <div>
-          <input id="password" type="password" v-model="password" required>
-        </div>
-      </div>
-      <div>
-        <button type="submit" @click="handleSubmit">
-          Login
-        </button>
-      </div>
-    </form>
+    <b-form @handleSubmit="onSubmit">
+      <b-form-group id="input-group-1" label="Email Address:" label-for="input-1">
+        <b-form-input id="email" type="email" v-model="email" placeholder="Type Email Address" require autofocus></b-form-input>
+      </b-form-group>
+      <b-form-group id="input-group-2" label="Password:" label-for="input-2">
+        <b-form-input id="password" type="password" v-model="password" placeholder="Type Password" required></b-form-input>
+      </b-form-group>
+      <b-button type="submit" variant="primary">Login</b-button>
+    </b-form>
   </div>
 </template>
 <script>
